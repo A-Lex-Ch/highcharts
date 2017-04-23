@@ -1,0 +1,33 @@
+.box-body .table-bordered tr td:nth-child(1){
+width: 10%;
+}
+.box-body .table-bordered tr td:nth-child(2){
+width: 15%;
+}
+.box-body .table-bordered tr td:nth-child(3){
+width: 15%;
+}
+.box-body .table-bordered tr td:nth-child(4){
+width: 15%;
+}
+.box-body .table-bordered tr td:nth-child(5){
+width: 15%;
+}
+.box-body .table-bordered tr td:nth-child(6){
+width: 25%;
+}
+.box-body .table-bordered tr td:nth-child(7){
+width: 5%;
+}
+.fa{
+	font-size: 16px;
+}
+.fa-times-circle{
+	color: #FF0000;
+}
+.fa-exclamation-circle{
+	color: #FF0000;
+}
+.fa-check-circle{
+	color: #008000;
+}

@@ -1,0 +1,554 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Тивун</title>
+
+            <link rel="stylesheet"
+          href="admin-lte-all.css"/>
+			<link rel="stylesheet"
+          href="style.css"/>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+                <script type="text/javascript" src="/bundles/avanzuadmintheme/static/dev/scripts/modernizr.js"></script>
+				<script type="text/javascript" src="highcharts.js"></script>
+				<script type="text/javascript" src="highcharts-more.js"></script>
+				<script type="text/javascript" src="solid-gauge.js"></script>
+        <!--[if lt IE 9]>
+
+        <![endif]-->
+
+    
+</head>
+<body class="skin-green">
+<div class="wrapper">
+
+            <header class="main-header">
+                 <a href="#" class="logo" style="font-size:15px;">
+         <img src="/bundles/app/images/logo.png" height="20px">
+         <!-- Add the class icon to your logo image or logo icon to add the margining -->
+        Поездной портал
+     </a>
+             <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                                                            <!-- Notifications: style can be found in dropdown.less -->
+<li class="dropdown notifications-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-bell-o"></i>
+        <span class="label label-warning">0</span>
+    </a>
+    <ul class="dropdown-menu">
+        <li class="header">У Вас 0 оповещений(ия)</li>
+        <li>
+            <!-- inner menu: contains the actual data -->
+            <ul class="menu">
+                            </ul>
+        </li>
+        <!--<li class="footer"><a href="/notifications/">View all</a></li>-->
+    </ul>
+</li>
+
+                                <!-- User Account: style can be found in dropdown.less -->
+<li class="dropdown user user-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="/bundles/avanzuadmintheme/img/avatar.png" class="user-image" alt="Admin" />
+    
+        <span class="hidden-xs">Admin</span>
+    </a>
+    <ul class="dropdown-menu">
+        <!-- User image -->
+        <li class="user-header">
+                        <img src="/bundles/avanzuadmintheme/img/avatar.png" class="img-circle" alt="Admin" />
+    
+            <p>
+                Tivun - Administrator
+                <!--<small>Member since 04.2017</small>-->
+            </p>
+        </li>
+        <!-- Menu Footer-->
+        <li class="user-footer">
+            <div class="pull-left">
+                <a href="#" id='profileLink' class="btn btn-default btn-flat">Профайл</a>
+            </div>
+            <div class="pull-right">
+                <a href="/logout" class="btn btn-default btn-flat">Выход</a>
+            </div>
+        </li>
+    </ul>
+</li>
+
+                                                    </ul>
+                    </div>
+                            </nav>
+        </header>
+    
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar sidebar-offcanvas">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+                            
+                                <!-- sidebar menu: : style can be found in sidebar.less -->
+<ul class="sidebar-menu">
+                    <li id="summary" class="  ">
+        <a href="/">
+             <i class="fa  fa-train"></i>             <span>Состояние состава</span>
+                                </a>
+
+            </li>
+    
+                    <li id="dashboard" class="  ">
+        <a href="/app/events">
+             <i class="fa fa-dashboard"></i>             <span>Сводная панель</span>
+                                </a>
+
+            </li>
+    
+                    <li id="os" class="  ">
+        <a href="/app/map">
+             <i class="fa fa-map"></i>             <span>Карта объектов</span>
+                                </a>
+
+            </li>
+    
+                    <li id="eventsAll2" class="  ">
+        <a href="/user/list/">
+             <i class="fa fa-users"></i>             <span>Пользователи</span>
+                                </a>
+
+            </li>
+    
+    </ul>
+                    </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Right side column. Contains the navbar and content of the page -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Элемент магистрали                <small>            
+    </small>
+            </h1>
+                            <ol class="breadcrumb">
+    <li>
+        <a href="/">
+            <i class="fa fa-dashboard"></i>
+            Главная
+        </a>
+    </li>
+        <li class="active">Элемент магистрали</li>
+</ol>
+                    </section>
+
+        <!-- Main content -->
+        <section class="content">
+                <div class="row">
+        <div class="col-md-12">
+            <div id="tabs" class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="pull-left header">
+                        <i class="fa fa-th"></i>
+                                                    
+                                            </li>
+
+                    <li class="active"><a href="#tab_1" data-toggle="tab">Информация</a></li>
+                    <li><a href="/host/10084/detail">Статистика</a></li>
+                    <!--<li><a href="/host/10084/last">Последние данные</a></li>-->
+                    <!--                    <li class="dropdown">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                                Dropdown <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a>
+                                                </li>
+                                                <li role="presentation" class="divider"></li>
+                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                                            </ul>
+                                            </li>
+                    -->
+                    <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_1">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-5 connectedSortable">
+                                    <div class="box box-success ">
+                                        <div class="box-header">
+                                            <h3 class="box-title">Информация</h3>
+
+                                            <div class="box-tools pull-right">
+                                                <button class="btn btn-box-tool" data-widget="collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body box-body-tree nano">
+                                                                                            <table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Наименование</th>
+        <th>Данные</th>
+    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>Элемент магистрали</td>
+            <td>СИМ</td>
+        </tr>
+                            <tr>
+            <td>Позиция/Тип вагона</td>
+            <td>Сервер</td>
+        </tr>
+    
+                <tr>
+            <td>IP</td>
+            <td>127.0.0.1 </td>
+        </tr>
+        </tbody>
+</table>
+
+          </div>
+          </div>
+    <div id="top20">
+	<div class="box box-success">
+    <div class="box-header">
+        <h3 class="box-title"></h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse">
+                <i class="fa fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <div class="box-body">
+	
+    </div>
+    <!--<div class="overlay" id="spin">
+        <i class="fa fa-refresh fa-spin"></i>
+    </div>-->
+</div>
+</div>
+                                    <div id="top20events"><div class="box box-success">
+    <div class="box-header">
+        <h3 class="box-title"></h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse">
+                <i class="fa fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <div class="box-body">
+		<table class="table table-bordered">
+                <tr>
+                  <th>Название</th>
+                  <th>Объем</th>
+                  <th colspan="3">Использовано</th>
+                </tr>
+                <tr>
+                  <td>Диск 1</td>
+				  <td>360 Gb</td>
+				  <td>150 Gb</td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-danger" style="width: 35%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-red">35%</span></td>
+                </tr>
+                <tr>
+                  <td>Диск 2</td>
+				  <td>360 Gb</td>
+				  <td>150 Gb</td>
+				  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-yellow" style="width: 30%"></div>
+                    </div>
+                  </td>
+				  <td><span class="badge bg-yellow">30%</span></td>
+                </tr>
+                <tr>
+                  <td>Диск 3</td>
+				  <td>360 Gb</td>
+				  <td>150 Gb</td>
+				<td>
+                    <div class="progress progress-xs progress-striped active">
+                      <div class="progress-bar progress-bar-primary" style="width: 50%"></div>
+                    </div>
+                </td>
+				  <td><span class="badge bg-light-blue">50%</span></td>
+                </tr>
+                <tr>
+                  <td>Диск 4</td>
+				  <td>360 Gb</td>
+				  <td>150 Gb</td>
+                  <td>
+                    <div class="progress progress-xs progress-striped active">
+                      <div class="progress-bar progress-bar-success" style="width: 80%"></div>
+                    </div>
+                  </td>
+				  <td><span class="badge bg-green">80%</span></td>
+                </tr>
+        </table>
+	</div>
+    <!--<div class="overlay" id="spin">
+        <i class="fa fa-refresh fa-spin"></i>
+    </div>-->
+</div></div>
+                                </div>
+                                <div class="col-md-7 connectedSortable">
+                                    <div class="box box-success">
+                                        <div class="box-body">
+                                            <div id="graphs">
+												<div style="margin: 0 auto">
+													<div id="container-speed" style="width: 165px; height: 120px; float: left"></div>
+													<div id="container-rpm" style="width: 165px; height: 120px; float: left"></div>
+													<div id="container-harddrive" style="width: 165px; height: 120px; float: left"></div>
+												</div>
+												
+											</div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                                <!-- </div>
+                                 <div class="row">-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane" id="tab_2">
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane" id="tab_3">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+            <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Версия</b> 1.0.5
+            </div>
+            <strong>2017, на базе платформы <a href="http://tivun.ru">мониторинга Тивун</a>.</strong>
+        </footer>
+        <div id="append"></div>
+</div>
+<!-- ./wrapper -->
+
+      <script>
+	  
+var gaugeOptions = {
+
+    chart: {
+        type: 'solidgauge'
+    },
+
+    title: null,
+
+    pane: {
+        center: ['50%', '85%'],
+        size: '140%',
+        startAngle: -90,
+        endAngle: 90,
+        background: {
+            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#EEE',
+            innerRadius: '60%',
+            outerRadius: '100%',
+            shape: 'arc'
+        }
+    },
+
+    tooltip: {
+        enabled: false
+    },
+
+    // the value axis
+    yAxis: {
+        stops: [
+            [0.1, '#55BF3B'], // green
+            [0.5, '#DDDF0D'], // yellow
+            [0.9, '#DF5353'] // red
+        ],
+        lineWidth: 0,
+        minorTickInterval: null,
+        tickAmount: 2,
+        title: {
+            y: -40
+        },
+        labels: {
+            y: 16
+        }
+    },
+
+    plotOptions: {
+        solidgauge: {
+            dataLabels: {
+                y: 5,
+                borderWidth: 0,
+                useHTML: true
+            }
+        }
+    }
+};
+
+// The speed gauge
+var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptions, {
+    yAxis: {
+        min: 0,
+        max: 2000,
+        title: {
+            text: 'CPU'
+        }
+    },
+
+    credits: {
+        enabled: false
+    },
+
+    series: [{
+        name: 'CPU',
+        data: [80],
+        dataLabels: {
+            format: '<div style="text-align:center"><span style="font-size:12px;color:' +
+                ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
+                   '<span style="font-size:10px;color:silver">mHz</span></div>'
+        },
+        tooltip: {
+            valueSuffix: ' mHz'
+        }
+    }]
+
+}));
+
+// The RPM gauge
+var chartRpm = Highcharts.chart('container-rpm', Highcharts.merge(gaugeOptions, {
+    yAxis: {
+        min: 0,
+        max: 8,
+        title: {
+            text: 'Memory'
+        }
+    },
+
+    series: [{
+        name: 'RPM',
+        data: [1],
+        dataLabels: {
+            format: '<div style="text-align:center"><span style="font-size:12px;color:' +
+                ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y:.1f}</span><br/>' +
+                   '<span style="font-size:10px;color:silver">Gb</span></div>'
+        },
+        tooltip: {
+            valueSuffix: ' Gb'
+        }
+    }]
+
+}));
+// The harddrive gauge
+var chartharddrive = Highcharts.chart('container-harddrive', Highcharts.merge(gaugeOptions, {
+    yAxis: {
+        min: 0,
+        max: 1000,
+        title: {
+            text: 'Drive'
+        }
+    },
+
+    series: [{
+        name: 'Drive',
+        data: [100],
+        dataLabels: {
+            format: '<div style="text-align:center"><span style="font-size:12px;color:' +
+                ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y:.1f}</span><br/>' +
+                   '<span style="font-size:10px;color:silver">mb/s</span></div>'
+        },
+        tooltip: {
+            valueSuffix: ' mb/s'
+        }
+    }]
+
+}));
+
+// Bring life to the dials
+setInterval(function () {
+    // Speed
+    var point,
+        newVal,
+        inc;
+
+    if (chartSpeed) {
+        point = chartSpeed.series[0].points[0];
+        inc = Math.round((Math.random() - 0.5) * 1000);
+        newVal = point.y + inc;
+
+        if (newVal < 0 || newVal > 2000) {
+            newVal = point.y - inc;
+        }
+
+        point.update(newVal);
+    }
+
+    // RPM
+    if (chartRpm) {
+        point = chartRpm.series[0].points[0];
+        inc = (Math.random() - 0.5);
+        newVal = point.y + inc;
+
+        if (newVal < 0 || newVal > 8) {
+            newVal = point.y - inc;
+        }
+
+        point.update(newVal);
+    }
+	
+	// drive
+    if (chartharddrive) {
+        point = chartRpm.series[0].points[0];
+        inc = Math.round((Math.random() - 0.5) * 100);
+        newVal = point.y + inc;
+
+        if (newVal < 0 || newVal > 1000) {
+            newVal = point.y - inc;
+        }
+
+        point.update(newVal);
+    }
+}, 2000);
+
+
+
+	  </script>  
+    <script src="admin-lte-all.js"></script>
+</body>
+</html>
+
